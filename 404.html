@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | Trysti</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .error-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        .error-content {
+            max-width: 600px;
+        }
+        .error-code {
+            font-size: 120px;
+            font-weight: 800;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            line-height: 1;
+        }
+        .error-title {
+            font-size: 32px;
+            margin-bottom: 16px;
+        }
+        .error-description {
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-page">
+        <div class="error-content">
+            <div class="error-code">404</div>
+            <h1 class="error-title">Page Not Found</h1>
+            <p class="error-description">
+                Sorry, the page you're looking for doesn't exist or has been moved.
+            </p>
+            <a href="/" class="btn btn-primary">Go Home</a>
+        </div>
+    </div>
+</body>
+</html>
