@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation -->
@@ -25,10 +25,10 @@
                     <span></span>
                 </button>
                 <ul class="nav-menu" id="navMenu">
-                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
                     <li><a href="#services" class="nav-link">Services</a></li>
                     <li><a href="#about" class="nav-link">About</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                    <li><a href="#contact" class="btn btn-nav">Get Started</a></li>
                     <li class="nav-theme-toggle">
                         <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
                             <svg class="sun-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -46,35 +46,114 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-background"></div>
         <div class="container">
             <div class="hero-content">
                 <h1 class="hero-title">
-                    Where Humans and AI
-                    <span class="gradient-text">Meet</span>
+                    Do More, <span class="highlight">With AI</span>
                 </h1>
                 <p class="hero-subtitle">
-                    Creating meaningful partnerships between people and artificial intelligence through 
-                    expert consulting and development
+                    Where humans and AI meet. We help businesses unlock the power of artificial intelligence 
+                    through expert consulting, development, and meaningful partnerships.
                 </p>
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn btn-primary">Get Started</a>
-                    <a href="#services" class="btn btn-secondary">Our Services</a>
-                </div>
+                <a href="#contact" class="btn btn-primary btn-large">Schedule a Discovery Call</a>
             </div>
         </div>
-        <div class="scroll-indicator">
-            <div class="mouse"></div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem-section">
+        <div class="container">
+            <div class="content-wrapper">
+                <h2 class="section-title">The AI Revolution: More Than Just Buzzwords</h2>
+                <p class="large-text">
+                    Running a successful business today means navigating countless challenges. You've heard 
+                    about AI and its potential to transform operations, but where do you actually begin?
+                </p>
+                <p class="large-text">
+                    The technology landscape is moving fast. Hesitating now could mean years of playing catch-up.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution-section">
+        <div class="container">
+            <div class="content-wrapper">
+                <h2 class="section-title">AI Consulting That Provides Real Value</h2>
+                <p class="large-text">
+                    At Trysti, we're passionate about making AI not just accessible but transformative. 
+                    We believe every business deserves tools and insights that can elevate operations, 
+                    reduce burden, and bring dreams closer to reality.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <h2 class="section-title center">Here's How We Do It</h2>
+            <p class="section-subtitle center">
+                We offer comprehensive solutions with a proven roadmap to take you from zero to ROI
+            </p>
+            
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3>AI Discovery Call</h3>
+                        <p>
+                            We start with a comprehensive dive into your business and explore potential 
+                            AI solutions tailored to your specific needs and goals.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3>AI Solutions Proposal</h3>
+                        <p>
+                            After the consultation, we craft an AI strategy aligned with your vision—one 
+                            that helps you reach goals and streamlines operations.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3>Design & Execution</h3>
+                        <p>
+                            We integrate your AI solutions to enhance business operations, reduce time on 
+                            routine tasks, and give you more freedom to focus on what matters.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">04</div>
+                    <div class="step-content">
+                        <h3>Scale & Optimize</h3>
+                        <p>
+                            Continuous improvement and scaling to ensure your AI solutions grow with your 
+                            business and deliver sustained value.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Services Section -->
     <section id="services" class="services">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Our Services</h2>
-                <p class="section-subtitle">Comprehensive AI solutions tailored to your needs</p>
-            </div>
+            <h2 class="section-title center">AI Consulting Services</h2>
+            <p class="section-subtitle center">
+                Comprehensive solutions to help you leverage AI effectively
+            </p>
+            
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">
@@ -82,10 +161,10 @@
                             <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </div>
-                    <h3 class="service-title">AI Strategy & Consulting</h3>
-                    <p class="service-description">
-                        Navigate the AI landscape with expert guidance. We help you identify opportunities, 
-                        develop roadmaps, and implement AI strategies aligned with your business goals.
+                    <h3>AI Strategy & Consulting</h3>
+                    <p>
+                        Navigate the AI landscape with expert guidance. Develop roadmaps and implement 
+                        strategies aligned with your business objectives.
                     </p>
                 </div>
 
@@ -95,23 +174,10 @@
                             <path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </div>
-                    <h3 class="service-title">Custom AI Development</h3>
-                    <p class="service-description">
-                        Build powerful AI solutions tailored to your unique challenges. From machine learning 
-                        models to intelligent automation, we develop cutting-edge applications.
-                    </p>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                    <h3 class="service-title">AI Integration & Implementation</h3>
-                    <p class="service-description">
-                        Seamlessly integrate AI capabilities into your existing systems. We ensure smooth 
-                        implementation, training, and support for maximum ROI.
+                    <h3>Custom AI Development</h3>
+                    <p>
+                        Build powerful AI solutions tailored to your unique challenges—from machine learning 
+                        models to intelligent automation.
                     </p>
                 </div>
 
@@ -121,23 +187,10 @@
                             <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </div>
-                    <h3 class="service-title">AI Training & Workshops</h3>
-                    <p class="service-description">
-                        Empower your team with AI knowledge. We provide hands-on training, workshops, 
-                        and educational programs to build internal AI capabilities.
-                    </p>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                    <h3 class="service-title">AI Ethics & Compliance</h3>
-                    <p class="service-description">
-                        Build responsible AI systems. We help ensure your AI solutions are ethical, 
-                        transparent, and compliant with industry regulations.
+                    <h3>Corporate AI Training</h3>
+                    <p>
+                        Empower your team with hands-on training and workshops to build internal AI 
+                        capabilities and drive adoption.
                     </p>
                 </div>
 
@@ -147,12 +200,54 @@
                             <path d="M13 10V3L4 14h7v7l9-11h-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </div>
-                    <h3 class="service-title">AI Optimization & Support</h3>
-                    <p class="service-description">
-                        Maximize the performance of your AI systems. Ongoing optimization, monitoring, 
-                        and technical support to keep your solutions running at peak efficiency.
+                    <h3>AI Agents & Automation</h3>
+                    <p>
+                        Design and deploy intelligent agents that automate workflows, reduce manual effort, 
+                        and increase efficiency across your organization.
                     </p>
                 </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>AI Integration</h3>
+                    <p>
+                        Seamlessly integrate AI capabilities into your existing systems with smooth 
+                        implementation and ongoing support.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>Custom GPT Applications</h3>
+                    <p>
+                        Build specialized GPT-powered applications tailored to your business needs, from 
+                        customer service to content generation.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>The Future Waits for No One</h2>
+                <p>
+                    We are quickly approaching mainstream adoption of AI in business. Hesitating now could 
+                    mean playing catch-up for years. Let's work together to put you in the top tier of 
+                    businesses leveraging AI effectively.
+                </p>
+                <p class="cta-tagline">Embrace the change. Stay ahead.</p>
+                <a href="#contact" class="btn btn-primary btn-large">Schedule a Discovery Call</a>
             </div>
         </div>
     </section>
@@ -160,44 +255,39 @@
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
+            <h2 class="section-title center">Our Approach</h2>
             <div class="about-content">
-                <div class="about-text">
-                    <h2 class="section-title">Why Choose Trysti?</h2>
-                    <p class="about-description">
-                        Trysti is where intentional connections between humans and AI are forged. Like a tryst—a 
-                        purposeful meeting—we facilitate meaningful partnerships between people and technology, 
-                        creating AI solutions that truly understand and serve human needs.
-                    </p>
-                    <div class="features">
-                        <div class="feature">
-                            <div class="feature-icon">✓</div>
-                            <div>
-                                <h4>Expert Team</h4>
-                                <p>Seasoned AI professionals with proven track records</p>
-                            </div>
-                        </div>
-                        <div class="feature">
-                            <div class="feature-icon">✓</div>
-                            <div>
-                                <h4>Tailored Solutions</h4>
-                                <p>Custom approaches designed for your specific needs</p>
-                            </div>
-                        </div>
-                        <div class="feature">
-                            <div class="feature-icon">✓</div>
-                            <div>
-                                <h4>End-to-End Support</h4>
-                                <p>From strategy to implementation and beyond</p>
-                            </div>
-                        </div>
-                        <div class="feature">
-                            <div class="feature-icon">✓</div>
-                            <div>
-                                <h4>Results-Driven</h4>
-                                <p>Focused on delivering measurable business value</p>
-                            </div>
-                        </div>
-                    </div>
+                <p class="large-text center">
+                    Trysti is where intentional connections between humans and AI are forged. Like a 
+                    tryst—a purposeful meeting—we facilitate meaningful partnerships between people and 
+                    technology.
+                </p>
+                <p class="large-text center">
+                    Our mission is to make AI accessible and practical, empowering you to achieve your 
+                    aspirations and carve out the future you've always envisioned.
+                </p>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">✓</div>
+                    <h3>Expert Team</h3>
+                    <p>Seasoned AI professionals with proven track records across industries</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">✓</div>
+                    <h3>Tailored Solutions</h3>
+                    <p>Custom approaches designed specifically for your unique challenges</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">✓</div>
+                    <h3>End-to-End Support</h3>
+                    <p>From strategy through implementation, optimization, and beyond</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">✓</div>
+                    <h3>Results-Driven</h3>
+                    <p>Focused on delivering measurable business value and ROI</p>
                 </div>
             </div>
         </div>
@@ -206,41 +296,51 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Get In Touch</h2>
-                <p class="section-subtitle">Ready to start your AI journey? Let's talk.</p>
-            </div>
-            <div class="contact-content">
+            <h2 class="section-title center">Get In Touch</h2>
+            <p class="section-subtitle center">
+                Want to learn more? Fill out the form to schedule your discovery call
+            </p>
+            
+            <div class="contact-wrapper">
                 <form class="contact-form" id="contactForm">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="company">Company</label>
-                        <input type="text" id="company" name="company">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="company">Company</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
                     </div>
                     <div class="form-group full-width">
-                        <label for="message">Message</label>
+                        <label for="message">How can we help? *</label>
                         <textarea id="message" name="message" rows="5" required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
+                    <button type="submit" class="btn btn-primary btn-large">Send Message</button>
                 </form>
+
                 <div class="contact-info">
                     <div class="contact-item">
                         <h4>Email</h4>
                         <p><a href="mailto:info@trysti.com">info@trysti.com</a></p>
                     </div>
                     <div class="contact-item">
-                        <h4>Follow Us</h4>
+                        <h4>Connect With Us</h4>
                         <div class="social-links">
-                            <a href="#" aria-label="LinkedIn">LinkedIn</a>
-                            <a href="#" aria-label="Twitter">Twitter</a>
-                            <a href="#" aria-label="GitHub">GitHub</a>
+                            <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                            <a href="#" target="_blank" rel="noopener noreferrer">Twitter</a>
+                            <a href="#" target="_blank" rel="noopener noreferrer">GitHub</a>
                         </div>
                     </div>
                 </div>
@@ -263,15 +363,16 @@
                         <h4>Services</h4>
                         <ul>
                             <li><a href="#services">AI Consulting</a></li>
-                            <li><a href="#services">Development</a></li>
-                            <li><a href="#services">Integration</a></li>
-                            <li><a href="#services">Training</a></li>
+                            <li><a href="#services">Custom Development</a></li>
+                            <li><a href="#services">Corporate Training</a></li>
+                            <li><a href="#services">AI Integration</a></li>
                         </ul>
                     </div>
                     <div class="footer-column">
                         <h4>Company</h4>
                         <ul>
                             <li><a href="#about">About</a></li>
+                            <li><a href="#how-it-works">How It Works</a></li>
                             <li><a href="#contact">Contact</a></li>
                         </ul>
                     </div>

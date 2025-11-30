@@ -1,4 +1,4 @@
-// Navigation functionality
+// Navigation and Theme functionality
 document.addEventListener('DOMContentLoaded', function() {
     const navbar = document.getElementById('navbar');
     const mobileMenuToggle = document.getElementById('mobileMenuToggle');
@@ -15,20 +15,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const newTheme = theme === 'dark' ? 'light' : 'dark';
         document.documentElement.setAttribute('data-theme', newTheme);
         localStorage.setItem('theme', newTheme);
-    });
-
-    // Navbar scroll effect
-    let lastScroll = 0;
-    window.addEventListener('scroll', function() {
-        const currentScroll = window.pageYOffset;
-
-        if (currentScroll > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-
-        lastScroll = currentScroll;
     });
 
     // Mobile menu toggle
@@ -48,11 +34,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Smooth scroll with offset for fixed navbar
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href === '#') return;
+            
             e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
+            const targetSection = document.querySelector(href);
 
             if (targetSection) {
                 const offsetTop = targetSection.offsetTop - 80;
@@ -63,28 +51,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-
-    // Active navigation link based on scroll position
-    function setActiveLink() {
-        const sections = document.querySelectorAll('section[id]');
-        const scrollY = window.pageYOffset;
-
-        sections.forEach(section => {
-            const sectionHeight = section.offsetHeight;
-            const sectionTop = section.offsetTop - 100;
-            const sectionId = section.getAttribute('id');
-            const correspondingLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
-
-            if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-                navLinks.forEach(link => link.classList.remove('active'));
-                if (correspondingLink) {
-                    correspondingLink.classList.add('active');
-                }
-            }
-        });
-    }
-
-    window.addEventListener('scroll', setActiveLink);
 
     // Intersection Observer for fade-in animations
     const observerOptions = {
@@ -101,8 +67,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, observerOptions);
 
-    // Observe service cards, features, and stats
-    const animatedElements = document.querySelectorAll('.service-card, .feature, .stat, .contact-form, .contact-info');
+    // Observe elements for animation
+    const animatedElements = document.querySelectorAll('.step, .service-card, .value-card');
     animatedElements.forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(20px)';
@@ -121,11 +87,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 name: document.getElementById('name').value,
                 email: document.getElementById('email').value,
                 company: document.getElementById('company').value,
+                phone: document.getElementById('phone').value,
                 message: document.getElementById('message').value
             };
 
             // Here you would typically send the data to a backend service
-            // For now, we'll just show a success message
             console.log('Form submitted:', formData);
 
             // Show success message
@@ -138,18 +104,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Notification function
     function showNotification(message, type = 'success') {
-        // Remove existing notifications
         const existingNotification = document.querySelector('.notification');
         if (existingNotification) {
             existingNotification.remove();
         }
 
-        // Create notification element
         const notification = document.createElement('div');
         notification.className = `notification notification-${type}`;
         notification.textContent = message;
 
-        // Add styles
         Object.assign(notification.style, {
             position: 'fixed',
             top: '100px',
@@ -165,7 +128,6 @@ document.addEventListener('DOMContentLoaded', function() {
             maxWidth: '400px'
         });
 
-        // Add animation keyframes if not already present
         if (!document.querySelector('#notificationStyles')) {
             const style = document.createElement('style');
             style.id = 'notificationStyles';
@@ -196,53 +158,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
         document.body.appendChild(notification);
 
-        // Remove notification after 5 seconds
         setTimeout(() => {
             notification.style.animation = 'slideOutRight 0.3s ease';
             setTimeout(() => {
                 notification.remove();
             }, 300);
         }, 5000);
-    }
-
-    // Parallax effect for hero background
-    window.addEventListener('scroll', function() {
-        const scrolled = window.pageYOffset;
-        const heroBackground = document.querySelector('.hero-background');
-        if (heroBackground && scrolled < window.innerHeight) {
-            heroBackground.style.transform = `translateY(${scrolled * 0.5}px)`;
-        }
-    });
-
-    // Add hover effect to service cards
-    const serviceCards = document.querySelectorAll('.service-card');
-    serviceCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-8px)';
-        });
-
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0)';
-        });
-    });
-
-    // Lazy loading for images (if you add images later)
-    if ('IntersectionObserver' in window) {
-        const imageObserver = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    if (img.dataset.src) {
-                        img.src = img.dataset.src;
-                        img.classList.add('loaded');
-                        imageObserver.unobserve(img);
-                    }
-                }
-            });
-        });
-
-        const lazyImages = document.querySelectorAll('img[data-src]');
-        lazyImages.forEach(img => imageObserver.observe(img));
     }
 
     // Handle external links
@@ -253,30 +174,9 @@ document.addEventListener('DOMContentLoaded', function() {
             link.setAttribute('rel', 'noopener noreferrer');
         }
     });
-
-    // Performance: Debounce scroll events
-    function debounce(func, wait) {
-        let timeout;
-        return function executedFunction(...args) {
-            const later = () => {
-                clearTimeout(timeout);
-                func(...args);
-            };
-            clearTimeout(timeout);
-            timeout = setTimeout(later, wait);
-        };
-    }
-
-    // Apply debounce to scroll-heavy functions if needed
-    window.addEventListener('scroll', debounce(setActiveLink, 100));
-
-    // Add smooth reveal animation to sections on load
-    window.addEventListener('load', function() {
-        document.body.classList.add('loaded');
-    });
 });
 
-// Add keyboard navigation support
+// Handle escape key to close mobile menu
 document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
         const navMenu = document.getElementById('navMenu');
@@ -289,44 +189,3 @@ document.addEventListener('keydown', function(e) {
         }
     }
 });
-
-// Handle focus trap in mobile menu
-function trapFocus(element) {
-    const focusableElements = element.querySelectorAll(
-        'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled])'
-    );
-    const firstFocusable = focusableElements[0];
-    const lastFocusable = focusableElements[focusableElements.length - 1];
-
-    element.addEventListener('keydown', function(e) {
-        if (e.key === 'Tab') {
-            if (e.shiftKey) {
-                if (document.activeElement === firstFocusable) {
-                    lastFocusable.focus();
-                    e.preventDefault();
-                }
-            } else {
-                if (document.activeElement === lastFocusable) {
-                    firstFocusable.focus();
-                    e.preventDefault();
-                }
-            }
-        }
-    });
-}
-
-// Apply focus trap to mobile menu when active
-const navMenu = document.getElementById('navMenu');
-if (navMenu) {
-    const observer = new MutationObserver(function(mutations) {
-        mutations.forEach(function(mutation) {
-            if (mutation.attributeName === 'class') {
-                if (navMenu.classList.contains('active')) {
-                    trapFocus(navMenu);
-                }
-            }
-        });
-    });
-
-    observer.observe(navMenu, { attributes: true });
-}
